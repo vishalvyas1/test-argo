@@ -5,6 +5,7 @@ metadata:
   name: {{ include "flask-hello-world.fullname" . }}
   labels:
     {{- include "flask-hello-world.labels" . | nindent 4 }}
+  namespace: {{ .Values.customNamespace }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
